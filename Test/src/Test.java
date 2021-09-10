@@ -30,7 +30,8 @@ import java.util.Random;
 //	}
 //}
 
-public class Test {
+
+/* public class Test {
 	public static void main(String[] args) {
 		System.out.println( 7 / 2 ); // 이거만 3 아래 나머지 전부 3.5임
 		System.out.println( 7.0 / 2.0 ); 
@@ -39,5 +40,18 @@ public class Test {
 		System.out.println( (double)7 / (double)2 );
 		System.out.println( (double)7 / 2 );
 		System.out.println( 7 / (double)2 );
+	}
+}
+*/
+public class Test {
+	public static void main(String[] args) {
+		int score[ ];
+		score = new int[3];
+		score[0]=11;
+		score[1]=22;
+		score[2]=33;
+		for (int i = 0; i < score.length; i++) {
+			System.out.println(score[i]);
+		}
 	}
 }
