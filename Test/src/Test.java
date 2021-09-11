@@ -197,15 +197,80 @@ import java.util.Random;
 //	}
 //}
 
+//public class Test {
+//	public static void main(String[] args) {
+//		int n[]={5,7,9,1,3,5,8,2,4,9};
+//		String a = "";
+//		Arrays.sort(n);
+//		for (int i = n.length-1; i >= 0; i--) {
+//			a += (n[i]+ " ");
+//		}
+//		System.out.println(a);
+//	}
+//}
+
+
+// 실습문제 22번
+
+//public class Test {
+//	public static void main(String[] args) {
+//		int n[]= {5,7,9,1,3,5,8,2,4,9};
+//		Arrays.sort(n);
+//		System.out.println(Arrays.toString(n));
+//		for (int i = 0; i < n.length/2; i++) {
+//			int temp=n[i];
+//			n[i]=n[n.length-1-i];
+//			n[n.length-1-i]=temp;
+//		}
+//		System.out.println(Arrays.toString(n));
+//	}
+//}
+
+// 실습문제 23번
+
+//public class Test {
+//	public static void main(String[] args) {
+//		int n[]= {7,8,3,5,6,9};
+//
+//		// 정렬 방식 : O(nlogn)
+//		Arrays.sort(n); //O(nlogn)
+//		System.out.println(n[n.length-2]);
+//
+//		//방법2
+//		int firstMax=Integer.MIN_VALUE;
+//		int secondMax=Integer.MIN_VALUE;
+//		for (int i = 0; i < n.length; i++) {
+//			if(n[i]>firstMax) {
+//				firstMax=n[i];
+//			}		
+//		}
+//
+//		for (int i = 0; i < n.length; i++) {
+//			if (n[i]==firstMax) {
+//				continue;
+//			}
+//			if (n[i]>secondMax) {
+//				secondMax=n[i];
+//			}		
+//		}
+//		System.out.println(secondMax);
+//	}	
+//}
+
 public class Test {
 	public static void main(String[] args) {
-		int n[]={5,7,9,1,3,5,8,2,4,9};
-		String a = "";
+		int n[]= {2,4,6,1,3,5,8,9}; // 배열 크기 짝수
+		// int n[]= {2,4,6,1,3,5,8,9,1}; // 배열 크기 홀수
+		
 		Arrays.sort(n);
-		for (int i = n.length-1; i >= 0; i--) {
-			a += (n[i]+ " ");
+		if (n.length%2==1) {
+			System.out.println(n[n.length/2]);
 		}
-		System.out.println(a);
+		else {
+			System.out.println((n[n.length/2-1]+n[n.length/2])/2.0);
+		}
+			
+		
 	}
 }
 
