@@ -257,24 +257,52 @@ import java.util.Random;
 //	}	
 //}
 
+//public class Test {
+//	public static void main(String[] args) {
+//		int n[]= {2,4,6,1,3,5,8,9}; // 배열 크기 짝수
+//		// int n[]= {2,4,6,1,3,5,8,9,1}; // 배열 크기 홀수
+//		
+//		Arrays.sort(n);
+//		if (n.length%2==1) {
+//			System.out.println(n[n.length/2]);
+//		}
+//		else {
+//			System.out.println((n[n.length/2-1]+n[n.length/2])/2.0);
+//		}
+//			
+//		
+//	}
+//}
+
+//public class Test {
+//	public static void main(String[] args) {
+//		Node head=null;
+//		Node n1=new Node(1);
+//		Node n2=new Node(2);
+//		Node n3=new Node(3);
+//		head=n1;
+//		n1.next=n2;
+//		n2.next=n3;
+//		
+//		for (Node p=head; p != null; p=p.next) System.out.print(p.data+"->");
+//		
+//		
+//		
+//	}
+//}
+//
+
 public class Test {
 	public static void main(String[] args) {
-		int n[]= {2,4,6,1,3,5,8,9}; // 배열 크기 짝수
-		// int n[]= {2,4,6,1,3,5,8,9,1}; // 배열 크기 홀수
-		
-		Arrays.sort(n);
-		if (n.length%2==1) {
-			System.out.println(n[n.length/2]);
-		}
-		else {
-			System.out.println((n[n.length/2-1]+n[n.length/2])/2.0);
-		}
-			
-		
+		Node head=null;
+		Node n1=new Node(1);
+		Node n2=new Node(2);
+		Node n3=new Node(3);
+		head=n1;
+		n1.next=n2;
+		n2.next=n3;
+		for (Node p=head; p != null; p=p.next) System.out.print(p.data+"->");
 	}
 }
-
-
-
 
 
