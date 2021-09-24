@@ -1,6 +1,4 @@
 import java.util.Arrays;
-import java.util.Random;
-
 
 // 5.6초
 //public class Test {
@@ -292,17 +290,103 @@ import java.util.Random;
 //}
 //
 
+//public class Test {
+//	public static void main(String[] args) {
+//		Node head=null;
+//		Node n1=new Node(1);
+//		Node n2=new Node(2);
+//		Node n3=new Node(3);
+//		head=n1;
+//		n1.next=n2;
+//		n2.next=n3;
+//		for (Node p=head; p != null; p=p.next) System.out.print(p.data+"->");
+//	}
+//}
+
+//public class Test {
+//	public static void main(String[] args) {
+//		int list[]=new int[1000000];
+//		Random random=new Random();
+//		for (int i = 0; i < list.length; i++) list[i]=random.nextInt(1000000);
+//		int key=12345;
+//		
+//		int i=0;
+//		for (; i < list.length; i++) { // 배열리스트 탐색 O(n)
+//			if(list[i]==key) break;
+//		}
+//		if(i==list.length) 
+//			System.out.println(-1);
+//		else
+//			System.out.println(i+"=>"+list[i]);
+//		
+//		// 균형탐색트리 O(log(n)) n= 10^6~2^20
+//		// 해시테이블 O(1)
+//	}
+//}
+
+//public class Test {
+//	public static void main(String[] args) {
+//		LinkedList<Integer> list=new LinkedList<>();
+//		for (int i = i; i<=10; i++) {
+//			list.addLast(i);
+//		}
+//		System.out.println(list);
+//		
+//	}
+//}
+
+//public class Test {
+//	public static void main(String[] args) {
+//		String s="대한민국의 수도는 서울이다.";
+//		LinkedList<Character> stack=new LinkedList<>();
+//		
+//		
+//		
+//	}
+//}
+//
+
+//public class Test {
+//	public static void main(String[] args) {
+//		String s="대한민국의 수도는 서울이다.";
+//		char stack[] = new char[s.length()];
+//		int top = -1;
+//		
+//		for (int i = 0; i < s.length(); i++) {
+//			stack[++top] = s.charAt(i); // push
+//		}
+//		while (top!=-1) {
+//			System.out.println(stack[top--]);
+//		}
+//	}
+//}
+
+//public class Test {
+//	public static void main(String[] args) {
+//		int n[]={1,2,3,4};
+//		System.out.println(Arrays.toString(n));
+//		int m[]=Arrays.copyOf(n, n.length*2); // 배열 n과 값이 같으면서 2배 크기의 새 배열 반환
+//		n=m;
+//		System.out.println(Arrays.toString(n));
+//		n=Arrays.copyOf(n, (int) (n.length*0.25)); // 배열 n과 값이 같으면서 1/4배 크기의 새 배열 반환
+//		System.out.println(Arrays.toString(n));
+//	}
+//}
+
 public class Test {
 	public static void main(String[] args) {
-		Node head=null;
-		Node n1=new Node(1);
-		Node n2=new Node(2);
-		Node n3=new Node(3);
-		head=n1;
-		n1.next=n2;
-		n2.next=n3;
-		for (Node p=head; p != null; p=p.next) System.out.print(p.data+"->");
+		int n[]={1,2,3,4};
+		System.out.println(Arrays.toString(n));
+		int m[]=arrayCopy(n, n.length*2); // 2배 확장
+		n=m;
+		System.out.println(Arrays.toString(n));
+		n=arrayCopy(n, (int) (n.length*0.25)); // 1/4로 축소
+		System.out.println(Arrays.toString(n));
 	}
+	private static int[] arrayCopy(int[] n, int newSize) {
+		int t[]=new int[newSize];
+		for (int i = 0; i < t.length; i++) t[i]=n[i];
+		return t;	
+		}
 }
-
 
