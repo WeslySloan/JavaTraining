@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.LinkedList;
 
 // 5.6초
 //public class Test {
@@ -373,20 +373,52 @@ import java.util.Arrays;
 //	}
 //}
 
+//public class Test {
+//	public static void main(String[] args) {
+//		int n[]={1,2,3,4};
+//		System.out.println(Arrays.toString(n));
+//		int m[]=arrayCopy(n, n.length*2); // 2배 확장
+//		n=m;
+//		System.out.println(Arrays.toString(n));
+//		n=arrayCopy(n, (int) (n.length*0.25)); // 1/4로 축소
+//		System.out.println(Arrays.toString(n));
+//	}
+//	private static int[] arrayCopy(int[] n, int newSize) {
+//		int t[]=new int[newSize];
+//		for (int i = 0; i < t.length; i++) t[i]=n[i];
+//		return t;	
+//		}
+//}
+//
+//public class Test {
+//	public static void main(String[] args) {
+//		LinkedList<String> queue=new LinkedList<>();
+//		queue.addLast("한국");
+//		queue.addLast("미국");
+//		queue.addLast("독일");
+//		System.out.println("큐 전체 내용:"+queue);
+//		
+//	}
+//}
+
+
 public class Test {
 	public static void main(String[] args) {
-		int n[]={1,2,3,4};
-		System.out.println(Arrays.toString(n));
-		int m[]=arrayCopy(n, n.length*2); // 2배 확장
-		n=m;
-		System.out.println(Arrays.toString(n));
-		n=arrayCopy(n, (int) (n.length*0.25)); // 1/4로 축소
-		System.out.println(Arrays.toString(n));
+		System.out.println(solvejosephusProblem(7,3));
 	}
-	private static int[] arrayCopy(int[] n, int newSize) {
-		int t[]=new int[newSize];
-		for (int i = 0; i < t.length; i++) t[i]=n[i];
-		return t;	
+	private static int solvejosephusProblem(int n, int k) {
+		LinkedList<Integer> queue=new LinkedList<Integer>();
+		
+		for (int i = 1; i<=n; i++) {
+			queue.addLast(i);
 		}
-}
+		while (queue.size()>1){
+			for (int i = 0; i< k-1; i++) {
+				queue.addLast(queue.removeFirst());
+			}
+			queue.removeFirst();
+		}
+		queue.removeFirst();
+	}
 
+}
