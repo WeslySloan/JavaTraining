@@ -37,9 +37,7 @@ public class Triangle {
 	}
 	
 	
-	
 	public double Circumference() {
 		return side1 + side2 + side3;
 	}
-	
-	
+}

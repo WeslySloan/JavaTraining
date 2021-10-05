@@ -420,5 +420,6 @@ public class Test {
 		}
 		queue.removeFirst();
 	}
+	System.out.println();
 
 }
