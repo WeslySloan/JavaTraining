@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 // 5.6초
 //public class Test {
 //	public static void main(String[] args) {
@@ -401,25 +399,52 @@ import java.util.LinkedList;
 //	}
 //}
 
+//
+//public class Test {
+//	public static void main(String[] args) {
+//		System.out.println(solvejosephusProblem(7,3));
+//	}
+//	private static int solvejosephusProblem(int n, int k) {
+//		LinkedList<Integer> queue=new LinkedList<Integer>();
+//		
+//		for (int i = 1; i<=n; i++) {
+//			queue.addLast(i);
+//		}
+//		while (queue.size()>1){
+//			for (int i = 0; i< k-1; i++) {
+//				queue.addLast(queue.removeFirst());
+//			}
+//			queue.removeFirst();
+//		}
+//		queue.removeFirst();
+//	}
+//	System.out.println();
+//
+//}
+
+
+//public class Test {
+//	public static void main(String[] args) {
+//		int n[]= {7,2,8,4,1};
+//		System.out.pirnltn( sum(n , n.length-1) );
+//	}
+//	private static int sum(int [] n, int i) { // 합(n[0,,i])
+//		// 합(n[0..i])=합(n[0..i-1)+n[i]
+//		if(i==0) return n[i]; // 
+//		return sum(n, i-1)+n[i];
+//	}
+//}
+
 
 public class Test {
 	public static void main(String[] args) {
-		System.out.println(solvejosephusProblem(7,3));
+		int n[]= {7,2,8,4,1};
+		System.out.println( sum(n , 0) );
 	}
-	private static int solvejosephusProblem(int n, int k) {
-		LinkedList<Integer> queue=new LinkedList<Integer>();
-		
-		for (int i = 1; i<=n; i++) {
-			queue.addLast(i);
-		}
-		while (queue.size()>1){
-			for (int i = 0; i< k-1; i++) {
-				queue.addLast(queue.removeFirst());
-			}
-			queue.removeFirst();
-		}
-		queue.removeFirst();
+	private static int sum(int [] n, int i) { // 합(n[0,,i])
+		// 합(n[0..i])=합(n[0..i-1)+n[i]
+		if(i==0) return n[i]; // 
+		return sum(n, i-1)+n[i];
 	}
-	System.out.println();
-
 }
+

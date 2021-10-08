@@ -1,0 +1,10 @@
+package circle;
+
+public class CircleDriver {
+	public static void main(String[] args) {
+		// TODO auto-generated metod stub
+		Circle circle = new Circle();
+		circle.start();
+		
+	}
+}

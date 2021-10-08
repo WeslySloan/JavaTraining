@@ -1,0 +1,16 @@
+package circle;
+
+public class Circle {
+	// 필드 변수들
+	private double radius = 0.0;
+	
+	//메소드들
+	//생성자 메소드
+	public Circle() {
+		radius = 10.0
+	}
+	//게터와 세터 메소드
+	public vodid start() {
+		
+	}
+}

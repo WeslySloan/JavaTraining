@@ -1,0 +1,12 @@
+package circle;
+
+public class CircleDriver {
+	public static void main(String[] args) {
+		// TODO auto-generated metod stub
+		circle circle = new circle();
+		
+		circle.setradius(30);
+		circle.start();
+		
+	}
+}
