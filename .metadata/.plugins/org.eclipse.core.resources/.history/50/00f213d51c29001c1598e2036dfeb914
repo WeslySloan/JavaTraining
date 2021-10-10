@@ -443,8 +443,8 @@ public class Test {
 	}
 	private static int sum(int [] n, int i) { // гу(n[0,,i])
 		// гу(n[0..i])=гу(n[0..i-1)+n[i]
-		if(i==n.length-1) return n[i]; // 
-		return n[i]+sum(n, i+1);
+		if(i==0) return n[i]; // 
+		return sum(n, i-1)+n[i];
 	}
 }
 
