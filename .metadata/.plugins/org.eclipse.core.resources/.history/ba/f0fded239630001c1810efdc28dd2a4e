@@ -1,0 +1,10 @@
+package character;
+
+public interface WeaponBehavior {
+	public abstract void useWeapon();
+	public void fight() {
+		setWeapon(WeaponBehavior w) {
+			this.weapon = w;
+		}
+	}
+}
