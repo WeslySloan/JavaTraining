@@ -436,15 +436,15 @@
 //}
 
 
-public class Test {
-	public static void main(String[] args) {
-		int n[]= {7,2,8,4,1};
-		System.out.println( sum(n , 0) );
-	}
-	private static int sum(int [] n, int i) { // 합(n[0,,i])
-		// 합(n[0..i])=합(n[0..i-1)+n[i]
-		if(i==n.length-1) return n[i]; // 
-		return n[i]+sum(n, i+1);
-	}
-}
-
+//public class Test {
+//	public static void main(String[] args) {
+//		int n[]= {7,2,8,4,1};
+//		System.out.println( sum(n , 0) );
+//	}
+//	private static int sum(int [] n, int i) { // 합(n[0,,i])
+//		// 합(n[0..i])=합(n[0..i-1)+n[i]
+//		if(i==n.length-1) return n[i]; // 
+//		return n[i]+sum(n, i+1);
+//	}
+//}
+//
