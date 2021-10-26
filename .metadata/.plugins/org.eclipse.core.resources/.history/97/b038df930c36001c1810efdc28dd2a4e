@@ -1,0 +1,16 @@
+package bank;
+
+public class MyAccount {
+	private String name = "";
+	private double balance = 0.0;
+	
+	public MyAccount(String name, double balance) {
+		super();
+		this.name = name;
+		this.balance = balance;
+	}
+
+	public MyAccount(String name) {
+		this(name, 0);
+	}
+}

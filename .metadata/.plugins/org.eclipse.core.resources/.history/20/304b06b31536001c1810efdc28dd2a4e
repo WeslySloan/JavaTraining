@@ -1,0 +1,40 @@
+package token;
+
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class Token {
+	HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+	
+	public Token() {
+		Scanner scanner = new Scanner("c:\\temp\\Bank.java");
+		StringTokenizer tokenizer = null;
+		String line = "";
+		
+		while (true) {
+			line = scanner.nextLine();
+			tokenizer = new StringTokenizer(line);
+			while (tokenizer.hasMoreTokens()) {
+				String token = tokenizer.nextToken();
+				if (hashMap.containsKey(token)) {
+					hashMap.put(token,  hashMap.get(token) + 1);
+				} else {
+					hashMap.put(token,  1);
+				}
+			}
+		}
+		
+	}
+		
+	public void start() {
+		Scanner scanner = new Scanner(System.in);
+		while (true ) {
+			System.out.println("찾는 단어를 입력하세요: ");
+			String word = scanner.nextLine();
+			int count = hashMap.get(word);
+			System.out.println(word + "단어의 등장 횟수는 " + count + "입니다.");
+		}
+	}
+
+}

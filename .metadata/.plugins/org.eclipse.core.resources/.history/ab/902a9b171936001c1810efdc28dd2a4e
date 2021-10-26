@@ -1,0 +1,10 @@
+package tokenAndLines;
+
+public class LinesAndCount {
+	private int count  = 0;
+	Collection<Integer> lines = new TreeSet<Integer>();
+	
+	public LinesAndCount() {
+		
+	}
+}
