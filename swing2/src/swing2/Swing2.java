@@ -61,7 +61,7 @@ public class Swing2 {
 		frame.repaint();
 	}
 	
-	public void start() {
+	public void play() {
 		
 	}
 	
