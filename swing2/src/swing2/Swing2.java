@@ -63,10 +63,12 @@ public class Swing2 {
 //				int yDiff = y = jewel.getY();
 //				double distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
 //				if (distance < radius) {
-//					jewels.remove(jewel);
+//					iter.remove(jewel);
+//					radius++;
+//					speed++;
 //				}
-//			}
-//			
+			}
+			
 			frame.repaint();
 			
 			try {
