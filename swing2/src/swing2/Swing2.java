@@ -5,10 +5,10 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class Swing2 {
 	JFrame frame;
@@ -34,7 +34,7 @@ public class Swing2 {
 		panel = new MyPanel();
 		frame.getContentPane().add(panel);
 		
-		for (int i = 0; i< 100; i++) {
+		for (int i = 0; i < 100; i++) {
 			jewels.add(new Jewel(width, height));
 		}
 	}
@@ -56,17 +56,17 @@ public class Swing2 {
 			x += stepX;
 			y += stepY;
 			
-//			Iterator<Jewel> iter = jewels.iterator();
-//			while (iter.hasNext()) {
-//				Jewel jewel = (Jewel) iter.next();
-//				int xDiff = x - jewel.getX();	
-//				int yDiff = y = jewel.getY();
-//				double distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-//				if (distance < radius) {
-//					iter.remove(jewel);
-//					radius++;
-//					speed++;
-//				}
+			Iterator<Jewel> iter = jewels.iterator();
+			while (iter.hasNext()) {
+				Jewel jewel = (Jewel) iter.next();
+				int xDiff = (x + radius) - (jewel.getX() + jewel.getRadius());
+				int yDiff = (y + radius) - (jewel.getY() + jewel.getRadius());
+				double distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+				if (distance < radius) {
+					iter.remove();
+					radius++;
+					speed++;
+				}
 			}
 			
 			frame.repaint();
@@ -120,7 +120,7 @@ public class Swing2 {
 			
 			for (Jewel jewel : jewels) {
 				g.setColor(new Color(jewel.getColor()));
-				g.fillOval(jewel.getX(),  jewel.getY(), jewel.getRadius(), jewel.getRadius());
+				g.fillOval(jewel.getX(), jewel.getY(), jewel.getRadius(), jewel.getRadius());
 			}
 			
 			g.setColor(Color.red);
