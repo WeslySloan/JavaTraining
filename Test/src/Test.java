@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 // 5.6초
 //public class Test {
 //	public static void main(String[] args) {
@@ -594,26 +592,75 @@ import java.util.HashMap;
 //}
 
 
+//public class Test {
+//	public static void main(String[] args) {
+//		HashMap<String, Integer> map = new HashMap<>();
+//		map.put("Korea", 32); // <key, value>가 <"Korea", 32>인 자료 삽입
+//		map.put("Japan", 50);
+//		map.put("France", 10);
+//		map.put("Mexico", 30);
+//		map.put("China", 16);
+//		System.out.println(map);
+//		map.put("Japan", 70); // key 값 "Japan"의 value를 70으로 변경
+//		System.out.println(map);
+//		map.remove("Japan"); // key 값 "Japan"에 해당하는 자료 삭제
+//		System.out.println(map);
+//		System.out.println(map.size()); // 해시테이블 내 총 자료 개수 반환
+//		System.out.println(map.containsKey("Korea")); // key "Korea" 존재 시 true 반환
+//		System.out.println(map.containsKey("Germany")); // key "Germany" 부재 시 false 반환
+//		System.out.println(map.get("Korea")); // key 값 "Korea"에 대응되는 value 반환
+//		System.out.println(map.get("Germany")); // key 값 부재 시 null 반환
+//		for (String key : map.keySet()) {
+//			System.out.println(key + "=>" + map.get(key));
+//		}
+//	}
+//}
+
 public class Test {
 	public static void main(String[] args) {
-		HashMap<String, Integer> map = new HashMap<>();
-		map.put("Korea", 32); // <key, value>가 <"Korea", 32>인 자료 삽입
-		map.put("Japan", 50);
-		map.put("France", 10);
-		map.put("Mexico", 30);
-		map.put("China", 16);
-		System.out.println(map);
-		map.put("Japan", 70); // key 값 "Japan"의 value를 70으로 변경
-		System.out.println(map);
-		map.remove("Japan"); // key 값 "Japan"에 해당하는 자료 삭제
-		System.out.println(map);
-		System.out.println(map.size()); // 해시테이블 내 총 자료 개수 반환
-		System.out.println(map.containsKey("Korea")); // key "Korea" 존재 시 true 반환
-		System.out.println(map.containsKey("Germany")); // key "Germany" 부재 시 false 반환
-		System.out.println(map.get("Korea")); // key 값 "Korea"에 대응되는 value 반환
-		System.out.println(map.get("Germany")); // key 값 부재 시 null 반환
-		for (String key : map.keySet()) {
-			System.out.println(key + "=>" + map.get(key));
+		SimpleLinearProbingHashTable ht = new SimpleLinearProbingHashTable(1000);
+		System.out.println(ht.add("Korea"));
+		System.out.println(ht.add("Korea"));
+		System.out.println(ht.add("Japan"));
+		System.out.println(ht.contains("Korea"));
+		System.out.println(ht.contains("Japan"));
+		System.out.println(ht.contains("China"));
+	}
+}
+
+//Reference: http://opendatastructures.org/versions/edition-0.1e/ods-java/5_2_LinearHashTable_Linear_.html, CC-BY-2.5-CA
+//Reference: https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/LinearProbingHashST.java.html, GPLv3
+public class SimpleLinearProbingHashTable {
+	private int HashTableSize;
+	Object hashTable[];
+
+	public SimpleLinearProbingHashTable(int size) {
+		HashTableSize = size;
+		hashTable = new Object[HashTableSize];
+	}
+
+	public boolean add(Object key) {
+		int index = hash(key); // 삽입할 key 값을 해쉬테이블 인덱스로 변환
+		while (hashTable[index] != null) { // 현재 버켓이 사용 중이라면
+			if (hashTable[index].equals(key))
+				return false; // 삽입할 key 값 이미 존재
+			index = (index + 1) % HashTableSize; // 다음 버켓 인덱스 계산
 		}
+		hashTable[index] = key; // 빈 버켓에 key 값 삽입
+		return true; // 삽입 성공
+	}
+
+	private int hash(Object key) {
+		return (key.hashCode() & 0x7FFFFFFF) % HashTableSize;
+	}
+
+	public boolean contains(Object key) {
+		int index = hash(key); // 탐색 key 값을 해쉬테이블 인덱스로 변환
+		while (hashTable[index] != null) { // 현재 버켓이 사용 중이라면
+			if (hashTable[index].equals(key))
+				return true; // 탐색 key 값 발견
+			index = (index + 1) % HashTableSize; // 다음 버켓 인덱스 계산
+		}
+		return false; // 탐색 key 값이 존재하지 않음
 	}
 }
