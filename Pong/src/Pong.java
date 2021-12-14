@@ -18,6 +18,9 @@ public class Pong extends JFrame {
 	//ball object
 	static Ball b = new Ball(250, 200);
 	
+	//score object
+	static Score a = new Score(x, y);
+	
 	
 	//constructor for window
 	public Pong() {
@@ -49,6 +52,9 @@ public class Pong extends JFrame {
 		dbGraphics = dbImage.getGraphics();
 		draw(dbGraphics);
 		g.drawImage(dbImage, 0, 0, this);
+		g.setColor(Color.WHITE);
+		g.drawString("0 VS 0", 250, 50);
+		g.setFont(new Font("TimesRoman", Font.BOLD , 50));
 	}
 	
 	public void draw(Graphics g) {
