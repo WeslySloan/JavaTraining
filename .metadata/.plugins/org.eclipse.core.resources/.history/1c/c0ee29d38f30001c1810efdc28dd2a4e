@@ -1,6 +1,0 @@
-package character;
-
-public class WeaponBehavior {
-	public abstract void useWeapon();
-
-}
