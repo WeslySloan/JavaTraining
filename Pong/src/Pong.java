@@ -19,7 +19,7 @@ public class Pong extends JFrame {
 	static Ball b = new Ball(250, 200);
 	
 	//score object
-	static Score a = new Score(x, y);
+//	static Score a = new Score(x, y);
 	
 	
 	//constructor for window
